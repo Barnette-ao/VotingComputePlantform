@@ -58,14 +58,8 @@
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "ceshi",
-      "permission": "ALLOW"
-    },
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "testUser",
-      "permission": "ALLOW"
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
     }
   ],
   "methods": {}

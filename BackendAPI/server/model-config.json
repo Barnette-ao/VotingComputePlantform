@@ -13,33 +13,26 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "db"
-  },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mongodb",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mongodb",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "mongodb",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mongodb",
     "public": false
   },
   "admin": {
-    "dataSource": "mongodb",
-    "public": true
-  },
-  "ceshi": {
     "dataSource": "mongodb",
     "public": true
   },
@@ -56,10 +49,6 @@
     "public": true
   },
   "user_votingRule": {
-    "dataSource": "mongodb",
-    "public": true
-  },
-  "UserTest": {
     "dataSource": "mongodb",
     "public": true
   },
