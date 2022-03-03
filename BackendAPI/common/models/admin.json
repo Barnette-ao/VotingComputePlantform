@@ -1,0 +1,83 @@
+{
+  "name": "admin",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "string"
+    },
+    "createdTime": {
+      "type": "date"
+    },
+    "state": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "isAdmin": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "realm": false,
+    "email": false,
+    "emailVerified": false
+  },
+  "validations": [],
+  "relations": {
+    "votingRules": {
+      "type": "hasMany",
+      "model": "votingRules",
+      "foreignKey": "adminId",
+      "through": "Uservote"
+    }
+    
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "count"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "upset"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "findById"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,69 @@
+{
+  "name": "PlantformUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "role": {
+      "type": "string",
+      "required": true,
+      "default": "普通用户"
+    },
+    "introduction": {
+      "type": "string"
+    },
+    "createdTime": {
+      "type": "date"
+    },
+    "state": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "realm": false,
+    "name": false,
+    "avatar": false,
+    "email": false,
+    "emailVerified": false
+  },
+  "validations": [],
+  "relations": {
+    "votingRules": {
+      "type": "hasMany",
+      "model": "votingRules",
+      "foreignKey": "plantformUerId",
+      "through": "user_votingRule"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "count"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "ceshi",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "testUser",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

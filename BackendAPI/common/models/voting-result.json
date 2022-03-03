@@ -1,0 +1,32 @@
+{
+  "name": "votingResult",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "ruleName": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "computeResult": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "isDelete": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Uservote",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "isOpen": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "isDelete": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "admin": {
+      "type": "belongsTo",
+      "model": "admin",
+      "foreignKey": "adminId"
+    },
+    "votingRules": {
+      "type": "belongsTo",
+      "model": "votingRules",
+      "foreignKey": "votingRuleId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

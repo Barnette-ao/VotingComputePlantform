@@ -1,0 +1,45 @@
+{
+  "name": "computingData",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "language": {
+      "type": "string"
+    },
+    "createdTime": {
+      "type": "date"
+    },
+    "dataUser": {
+      "type": "string"
+    },
+    "dataContent": {
+      "type": "string",
+      "default": "'"
+    },
+    "state": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "ceshi",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "testUser",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

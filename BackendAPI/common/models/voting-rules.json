@@ -1,0 +1,72 @@
+{
+  "name": "votingRules",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ruleName": {
+      "type": "string",
+      "required": true
+    },
+    "ruleCreator": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "program": {
+      "type": "string"
+    },
+    "dataExample": {
+      "type": "string"
+    },
+    "createdTime": {
+      "type": "date"
+    },
+    "isOpen": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "state": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "computeResult": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "plantformUsers": {
+      "type": "hasMany",
+      "model": "PlantformUser",
+      "foreignKey": "votingRuleId",
+      "through": "user_votingRule"
+    },
+    "admins": {
+      "type": "hasMany",
+      "model": "admin",
+      "foreignKey": "votingRuleId",
+      "through": "Uservote"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "ceshi",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "testUser",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

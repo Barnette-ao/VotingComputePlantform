@@ -1,0 +1,43 @@
+{
+  "name": "user_votingRule",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "isOpen": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "plantformUser": {
+      "type": "belongsTo",
+      "model": "PlantformUser",
+      "foreignKey": "plantformUserId"
+    },
+    "votingRules": {
+      "type": "belongsTo",
+      "model": "votingRules",
+      "foreignKey": "votingRuleId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "ceshi",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "testUser",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
