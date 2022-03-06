@@ -46,12 +46,12 @@
 							</div>
 							<div class="addVotingRuleButton">
 								<div class="addVotingRuleButtonEntity">
-									<el-button @click="addVotingRule"> 添加投票规则</el-button>
+									<el-button id="addRules" @click="addVotingRule"> 添加投票规则</el-button>
 								</div>
 							</div>
 						</div>
 						<div class="votingListBody">
-							<el-table :data="tableData" style="width: 100%">
+							<el-table :data="tableData"  style="width: 100%">
 								<el-table-column prop="ruleName" label="投票规则名称" width="180">
 								</el-table-column>
 								<el-table-column prop="language" label="规则表示语言" width="180">
@@ -619,9 +619,11 @@
 	}
 
 	.el-button {
-		line-height: 60px;
+		line-height: 38px;
 		border-top-style: 1px solid black;
 	}
+	
+	
 
 	.el-aside {
 		width: 100px;
@@ -695,14 +697,18 @@
 		line-height: 100%;
 		display: table;
 	}
-
+	
+	.votingListBody .el-button--mini{
+		padding: 1px 15px;
+	}
+	
 	.votingListNameWord {
 		vertical-align: middle;
 		display: table-cell;
 	}
 
 	.addVotingRuleButton {
-		width: 64%;
+		width: 45%;
 		height: 100%;
 		/* background: navajowhite; */
 		display: table;
@@ -712,5 +718,14 @@
 	.addVotingRuleButtonEntity {
 		vertical-align: middle;
 		display: table-cell;
+		padding:0;
+	}
+	
+	#addRules {
+		padding:3px 20px;
+	}
+	
+	#votingRuleOperator{
+		padding:1px 15px;
 	}
 </style>
