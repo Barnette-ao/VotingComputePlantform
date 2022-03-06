@@ -722,7 +722,7 @@
 	}
 	
 	#addRules {
-		padding:3px 20px;
+		padding:1px 20px;
 	}
 	
 	#votingRuleOperator{
