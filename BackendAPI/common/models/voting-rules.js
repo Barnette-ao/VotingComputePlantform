@@ -263,7 +263,7 @@ module.exports = function(Votingrules) {
 
       var dataFileName = votingRuleName + '_dataform.txt'
 
-      var router = 'D:\\clingo\\'
+      var router = '/root/clingo/clingoProgram'
 
       var programParam = path.join(router,  programFileName);
 
